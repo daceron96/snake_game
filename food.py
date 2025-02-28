@@ -1,15 +1,15 @@
 import pygame
 import random
 
-BLOCK_SIZE = 20  # Tamaño de la comida
-RESPAWN_TIME = 2000  # Tiempo en milisegundos (1 segundo)
+BLOCK_SIZE = 20  
+RESPAWN_TIME = 2000  
 
 class Food:
     def __init__(self, screen_width, screen_height):
         self.screen_width = screen_width
         self.screen_height = screen_height
         self.position = self.generate_position()
-        self.visible = True  # Indica si la comida es visible
+        self.visible = True 
         self.last_eaten_time = None
 
     def generate_position(self):

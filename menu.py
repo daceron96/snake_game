@@ -26,7 +26,7 @@ class Menu:
         self.screen.fill((30, 30, 30))  
 
         mouse_pos = pygame.mouse.get_pos()
-        cursor_on_button = False  # Para saber si el cursor está en algún botón
+        cursor_on_button = False  
 
         for button in self.buttons:
             if button["rect"].collidepoint(mouse_pos):  
@@ -37,13 +37,11 @@ class Menu:
 
             color = self.hover_color if button["hover"] else self.button_color
             pygame.draw.rect(self.screen, color, button["rect"], border_radius=8)
-
-            # Renderizar texto centrado en el botón
+            
             text_surface = self.font.render(button["text"], True, self.text_color)
             text_rect = text_surface.get_rect(center=button["rect"].center)
             self.screen.blit(text_surface, text_rect)
 
-        # Cambiar cursor a "mano" si está sobre un botón
         if cursor_on_button:
             pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
         else:
@@ -55,6 +53,6 @@ class Menu:
             mouse_pos = pygame.mouse.get_pos()
             for button in self.buttons:
                 if button["rect"].collidepoint(mouse_pos):
-                    return button["text"]  # Retorna la opción seleccionada
+                    return button["text"]  
 
         return None

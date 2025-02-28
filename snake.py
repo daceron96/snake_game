@@ -6,7 +6,7 @@ BLOCK_SIZE = 20
 class Snake:
     def __init__(self, x, y, screen_width, screen_height):
         self.body = [(x, y)]  
-        self.direction = "RIGHT"  # Dirección inicial
+        self.direction = "RIGHT"  
         self.screen_width = screen_width
         self.screen_height = screen_height
         self.growing = False
@@ -29,14 +29,12 @@ class Snake:
         head_x %= self.screen_width
         head_y %= self.screen_height
 
-        # Insertamos la nueva cabeza
         self.body.insert(0, (head_x, head_y))
 
-        # Si está creciendo, no eliminamos la cola
         if not self.growing:
             self.body.pop()
         else:
-            self.growing = False  # Reseteamos el estado de crecimiento
+            self.growing = False  
 
     def change_direction(self, new_direction):
         """Evita que la serpiente se mueva en la dirección opuesta directamente."""

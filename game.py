@@ -78,11 +78,10 @@ class SnakeGame:
         game_over_text = font.render("GAME OVER", True, (255, 0, 0))
         restart_text = font.render("Presiona R para reiniciar o Q para salir", True, (255, 255, 255))
 
-        # Obtener dimensiones del texto para centrarlo
         game_over_rect = game_over_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 - 50))
         restart_rect = restart_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 + 20))
 
-        self.screen.fill((0, 0, 0))  # Fondo negro
+        self.screen.fill((0, 0, 0))  
         self.screen.blit(game_over_text, game_over_rect.topleft)
         self.screen.blit(restart_text, restart_rect.topleft)
 
@@ -95,11 +94,11 @@ class SnakeGame:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_r:  # Reiniciar
-                        self.__init__()  # Reinicia el juego
+                    if event.key == pygame.K_r:  
+                        self.__init__()  
                         self.start()
                         waiting = False
-                    elif event.key == pygame.K_q:  # Salir
+                    elif event.key == pygame.K_q:  
                         pygame.quit()
                     sys.exit()
 
@@ -127,10 +126,8 @@ class SnakeGame:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 option = self.menu.handle_events(event)
                 if option == "Jugar":
-                    # self.menu_active = False  # Oculta el menú y empieza el juego
                     self.state = "game"
                 if option == "Instrucciones":
-                    # self.menu_active = False
                     self.state = "instructions"
                 elif option == "Salir":
                     pygame.quit()
@@ -143,7 +140,7 @@ class SnakeGame:
         while self.running:
             self.handle_events()
             self.update()
-            self.clock.tick(8)  # Controla la velocidad del juego
+            self.clock.tick(8)  
 
         pygame.quit()
         sys.exit()
