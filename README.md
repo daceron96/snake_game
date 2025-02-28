@@ -68,11 +68,3 @@ Este es un juego clásico de la serpiente desarrollado en Python utilizando la b
 
 - Presiona `R` para reiniciar el juego y volver al menú.
 - Presiona `Q` para salir del juego.
-
-## Contribuciones
-
-Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para discutir cualquier cambio que desees realizar.
-
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
